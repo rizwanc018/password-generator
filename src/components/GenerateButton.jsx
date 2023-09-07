@@ -42,7 +42,6 @@ const GenerateButton = () => {
     return (
         <>
             <Toaster />
-
             <button
                 className="bg-btn font-bold w-fit py-3 px-5 mt-6 text-[16px] rounded"
                 onClick={generatePassword}
