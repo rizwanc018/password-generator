@@ -11,8 +11,8 @@ import './Generator.css'
 const Generator = () => {
 
     return (
-        <div className="mt-24 md:mt-8">
-            <div className="container w-[90%] md:w-1/3 p-8">
+        <div className="mt-24 md:mt-14">
+            <div className="container w-[90%] md:w-1/2 xl:w-1/3 p-8">
                 <h2 className='font-bold text-3xl mb-4 text-center'>Free Password Generator</h2>
                 <PasswordField />
                 <br />

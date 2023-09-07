@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { setPassword } from '../Redux/slices/passwordSlice'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const GenerateButton = () => {
 
@@ -13,8 +15,14 @@ const GenerateButton = () => {
     const upperCaseLetters = lowerCaseLetters.map((letter) => letter.toUpperCase())
 
     function generatePassword() {
-        const { length, uppercase, lowercase, numbers, symbols } = passwordConfig;
-        generateTheWord(length, uppercase, lowercase, numbers, symbols);
+        const { length, uppercase, lowercase, numbers, symbols } = passwordConfig
+        if (length < 6 || length > 30) {
+            toast.error('Length must be between 6 and 30')
+        } else if (uppercase == false && lowercase == false && numbers == false && symbols == false) {
+            toast.error('Atleast one option should be selected')
+        } else {
+            generateTheWord(length, uppercase, lowercase, numbers, symbols);
+        }
     }
 
     const shuffleArray = (array) => array.sort(() => Math.random() - 0.5)
@@ -32,12 +40,16 @@ const GenerateButton = () => {
     };
 
     return (
-        <button
-            className="bg-btn font-bold w-fit py-3 px-5 mt-6 text-[16px] rounded"
-            onClick={generatePassword}
-        >
-            Generate password
-        </button>
+        <>
+            <Toaster />
+
+            <button
+                className="bg-btn font-bold w-fit py-3 px-5 mt-6 text-[16px] rounded"
+                onClick={generatePassword}
+            >
+                Generate password
+            </button>
+        </>
     )
 }
 

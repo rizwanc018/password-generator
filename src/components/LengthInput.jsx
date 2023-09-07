@@ -13,8 +13,8 @@ const LengthInput = () => {
             <div>
                 <input
                     type="number"
-                    min="4"
-                    max="20"
+                    min="6"
+                    max="30"
                     value={changedLength}
                     onChange={(e) => dispatch(handleLength(e.target.value))}
                 />
