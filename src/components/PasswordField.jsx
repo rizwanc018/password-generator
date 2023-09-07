@@ -15,6 +15,14 @@ const PasswordField = () => {
         }
     }
 
+    const handleChange = e => {
+        if (!generatedPassword) {
+            toast.error('Generate password first')
+        } else {
+            dispatch(setPassword(e.target.value))
+        }
+    }
+
     return (
         <>
             <Toaster />
@@ -25,7 +33,7 @@ const PasswordField = () => {
                     placeholder=""
                     autoComplete="off"
                     // disabled={!generatedPassword.length}
-                    // onChange={(e) => dispatch(setPassword(e.target.value))}
+                    onChange={(e) => handleChange(e)}
                     onClick={e => handleClick(e)}
                 />
                 <button
