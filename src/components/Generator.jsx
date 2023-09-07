@@ -78,9 +78,9 @@ const Generator = () => {
 
     return (
         <div className="mt-24 md:mt-8">
-            <div className="container w-[90%] md:w-1/2 wrapper-box">
+            <div className="container w-[90%] md:w-1/2 p-8">
                 <h2 className='font-bold text-3xl mb-4 text-center'>Free Password Generator</h2>
-                <div className="passwordConfig-box flex gap-x-2">
+                <div className="flex gap-x-2">
                     <input
                         type="text"
                         value={handelText}
@@ -89,7 +89,7 @@ const Generator = () => {
                         onChange={(e) => setHandelText(e.target.value)}
                     />
                     <button
-                        className="copy-button"
+                        className="w-1/4 pointer rounded font-bold bg-btn"
                         onClick={() => {
                             if (handelText.length > 0) {
                                 navigator.clipboard.writeText(handelText)
@@ -162,9 +162,10 @@ const Generator = () => {
                         />
                     </div>
                 </div>
-                <div>
+                <div className='w-full text-center'>
                     <button
-                        className="generate-button" onClick={generatePassword}
+                        className="bg-btn font-bold w-fit py-3 px-5 mt-6 text-[16px] rounded" 
+                        onClick={generatePassword}
                     >
                         Generate password
                     </button>
