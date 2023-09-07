@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  width: 100vw;
+  height: 100vh;
+}
+
+@layer base {
+  input[type='text'] ,
+  input[type='password'] ,
+  input[type='email'] ,
+  input[type='number'] ,
+  input[type='url'] ,
+  input[type='date'] ,
+  input[type='datetime-local'] ,
+  input[type='month'] ,
+  input[type='week'] ,
+  input[type='time'] ,
+  input[type='search'] ,
+  input[type='tel'] ,
+  [multiple] ,
+  select ,
+  textarea
+   {
+    @apply w-full border-2 px-2 py-1 border-green-400 rounded-lg shadow-sm 
+  }
+}
